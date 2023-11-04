@@ -1,0 +1,21 @@
+#Home{
+    width: 100vw;
+    height: 100vh;
+}
+/* Scrollbar design */
+.scrollbar{
+    overflow: hidden scroll;
+  }
+  .scrollbar::-webkit-scrollbar{
+    width: 0.3rem;
+  }
+  .scrollbar::-webkit-scrollbar-track{
+    width: 0.1rem;
+    background-color: rgb(4, 48, 48);
+    border-radius: 3rem;
+  }
+  .scrollbar::-webkit-scrollbar-thumb{
+    width: 0.1rem;
+    background-color: #6b716e;
+    border-radius: 2.5rem;
+  }
