@@ -1,0 +1,20 @@
+#BIcon{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0.5rem;
+    color: rgb(0, 76, 255);
+    background-color: #f3ff14;
+    font-size: 2rem;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5rem;
+    border: 0;
+    cursor: pointer;
+}
+#BIcon:hover{
+    filter: drop-shadow(0 0 1.5rem #ffffff8b) ;
+}
