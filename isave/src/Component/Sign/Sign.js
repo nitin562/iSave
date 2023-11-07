@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BIcon from "../BIcon/BIcon";
 import "./sign.css";
 import { useNavigate } from "react-router-dom";
+import InputB from "../InputBox/InputB";
 
 export default function Sign() {
   const nav=useNavigate()
@@ -47,29 +48,26 @@ export default function Sign() {
       <form className="signCont" onSubmit={onSign}>
         <p id="head-1">CREATE ACCOUNT</p>
         <img src={require("../Images/user.png")} alt="user" />
-        <input
-          value={Name}
-          onChange={onchange}
+        <InputB
+          state={Name}
+          change={onchange}
           type="text"
           name="user"
-          id="user"
-          placeholder="Enter username"
+          write="Enter username"
         />
-        <input
-          value={email}
-          onChange={onchange}
+        <InputB
+          state={email}
+          change={onchange}
           type="email"
-          id="Email"
-          placeholder="Enter Email"
+          write="Enter Email"
           name="email"
         />
-        <input
-          value={password}
-          onChange={onchange}
+        <InputB
+          state={password}
+          change={onchange}
           type="password"
-          id="Password"
           name="Password"
-          placeholder="Enter Password"
+          write="Enter Password"
         />
         <div className="buttons">
           <button type="submit">Register</button>

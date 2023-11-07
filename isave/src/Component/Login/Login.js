@@ -3,12 +3,14 @@ import "./login.css";
 
 import BIcon from "../BIcon/BIcon";
 import { useNavigate } from "react-router-dom";
+import ErrBottom from "../ErrorComp/ErrBottom";
+import InputB from "../InputBox/InputB";
 export default function Login() {
   const nav=useNavigate()
   const [email, setemail] = useState("")
   const [password, setpassword] = useState("")
   const changeVal=(e)=>{
-    if(e.target.id==="Email"){
+    if(e.target.type==="email"){
       setemail(e.target.value)
     }
     else{
@@ -32,19 +34,19 @@ export default function Login() {
       <form className="loginCont" onSubmit={loginSubmit}>
         <p id="head-1">LOGIN</p>
         <img src={require("../Images/user.png")} alt="user" />
-        <input type="email" id="Email" placeholder="Enter Email" name="email" value={email} onChange={changeVal} />
-        <input
+        <InputB type="email" write="Enter Email" name="email" state={email} change={changeVal} />
+        <InputB
           type="password"
-          id="Password"
           name="Password"
-          placeholder="Enter Password"
-          value={password}
-          onChange={changeVal}
+          write="Enter Password"
+          state={password}
+          change={changeVal}
         />
         <div className="buttons">
           <button type="submit">Login</button>
         </div>
       </form>
+      
       <BIcon title="Sign in" clas="fa-solid fa-user-plus" path="/sign"/>
     </div>
   );

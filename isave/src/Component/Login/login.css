@@ -52,7 +52,7 @@
     background-color: #ff1372;
     cursor: pointer;
 }
-#Email:hover,#Password:hover,.buttons button:hover,#Signup:hover{
+.buttons button:hover,#Signup:hover{
     filter: drop-shadow(0 0 1.5rem #ffffff8b) ;
 }
 

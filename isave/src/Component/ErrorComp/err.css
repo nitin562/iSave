@@ -1,0 +1,18 @@
+/* Error Bottom */
+#errB{
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(175, 206, 206);
+}
+#errB p{
+    background-color: #e96767;
+    
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: monospace;
+    color: red;
+    text-shadow: 0 0 1rem orangered;
+}
