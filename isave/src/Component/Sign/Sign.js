@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import InputB from "../InputBox/InputB";
 
 export default function Sign() {
-  const nav=useNavigate()
+  const nav = useNavigate();
+  const [error, seterror] = useState([]);
   const [Name, setName] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
@@ -21,27 +22,45 @@ export default function Sign() {
 
   const onSign = async (e) => {
     e.preventDefault();
-    const data={
-      name:Name,
+    seterror([])
+    const data = {
+      name: Name,
       email,
-      Password:password
-    }
-    const options={
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json"
+      Password: password,
+    };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-      body:JSON.stringify(data)
-    }
-    const response=await fetch("http://localhost:8000/api/auth/sign",options)
-    const result=await response.json()
-    if(result.success===1){
+      body: JSON.stringify(data),
+    };
+    const response = await fetch(
+      "http://localhost:8000/api/auth/sign",
+      options
+    );
+    const result = await response.json();
+    if (result.success === 1) {
       // ok
-      localStorage.setItem("name",result.name)
-      localStorage.setItem("token",result.token)
-      nav("/welcome")
+      localStorage.setItem("name", result.name);
+      localStorage.setItem("token", result.token);
+      nav("/welcome");
+    } else if (result.success === 0) {
+      //error as array
+      console.log(1, result);
 
-    }
+      result.err.errors.forEach((e) => {
+        // e is object with path and msg
+        seterror((prev) => {
+          return [...prev, { errName: e.path, errMsg:e.msg }]; //e.path="email" or "Password"
+        });
+      });
+    } else if (result.success === -1) {
+      //email is not found
+      seterror((prev) => {
+        return [...prev, { errName: "email",errMsg:"Email is already used" }];
+      });
+    } 
   };
   return (
     <div id="sign" className="scrollbar">
@@ -50,23 +69,29 @@ export default function Sign() {
         <img src={require("../Images/user.png")} alt="user" />
         <InputB
           state={Name}
+          width="80%"
           change={onchange}
           type="text"
-          name="user"
+          name="name"
+          err={error}
           write="Enter username"
         />
         <InputB
+          width="80%"
           state={email}
           change={onchange}
           type="email"
           write="Enter Email"
+          err={error}
           name="email"
         />
         <InputB
           state={password}
+          width="80%"
           change={onchange}
           type="password"
           name="Password"
+          err={error}
           write="Enter Password"
         />
         <div className="buttons">

@@ -1,6 +1,14 @@
-#input{ 
+.inputB{
+    width: 100%;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.input{ 
     /* both for login.js and sign.js */
-    width: 80%;
+    width: 100%;
     font-size: 1.3rem;
     text-wrap: wrap;
     font-family: QuickSand;
@@ -12,6 +20,18 @@
     cursor: pointer;
     padding: 0.5rem;
 }
-#input:hover{
+.input:hover{
     filter: drop-shadow(0 0 1.5rem #ffffff8b) ;
+}
+.inputB p{
+    /* border: 0.1rem solid #fff; */
+    border-radius: 2rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    color: beige;
+    background-color: rgba(255, 0, 0, 0.459);
+    font-family: "Arial Narrow";
+    letter-spacing: 0.1rem;
+    text-wrap: wrap;
+    font-size: 1.1rem;
 }

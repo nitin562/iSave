@@ -12,7 +12,7 @@ router.get("/login",[check('email',"Email is invalid").isEmail(),check('Password
     console.log(email,Password)
     const results=validationResult(req)
     if(!results.isEmpty()){
-        return res.status(400).json({success:0,err:results.mapped()})
+        return res.status(400).json({success:0,err:results})
     }
     const client=await userModel.findOne({email})
     if(!client){
@@ -35,7 +35,7 @@ router.post("/sign",[check("name","Name must have atleast 3 characters").isLengt
     // console.log(email,Password)
     const results=validationResult(req)
     if(!results.isEmpty()){
-        return res.status(400).json({success:0,err:results.mapped()})
+        return res.status(400).json({success:0,err:results})
     }
     const client=await userModel.findOne({email})
     if(client){
