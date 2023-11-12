@@ -25,13 +25,21 @@
 }
 .inputB p{
     /* border: 0.1rem solid #fff; */
-    border-radius: 2rem;
+    border-radius: 1rem;
     width: 100%;
     padding: 0.5rem 1rem;
     color: beige;
-    background-color: rgba(255, 0, 0, 0.459);
+    background-color: rgba(255, 0, 0, 0.249);
     font-family: "Arial Narrow";
     letter-spacing: 0.1rem;
     text-wrap: wrap;
-    font-size: 1.1rem;
+    animation: expand 1s ease forwards
+}
+@keyframes expand {
+    0%{
+        font-size: 0;
+    }
+    100%{
+        font-size: 1.1rem;
+    }
 }

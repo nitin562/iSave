@@ -5,6 +5,8 @@ import Nav from '../Nav/Nav'
 
 
 import Data from '../WorkArea/Data'
+import View from '../viewArea/View'
+
 export default function Dash() {
   
   return (
@@ -12,6 +14,8 @@ export default function Dash() {
       <Nav/>
       <Routes>
         <Route path="data" element={<Data/>}/>
+        <Route path="view/:id" element={<View/>}/>
+
       </Routes>
     </div>
   )

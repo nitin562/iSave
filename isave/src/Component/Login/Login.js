@@ -4,6 +4,7 @@ import "./login.css";
 import BIcon from "../BIcon/BIcon";
 import { useNavigate } from "react-router-dom";
 import InputB from "../InputBox/InputB";
+import links from "../Links";
 export default function Login() {
   const [error, seterror] = useState([])
   const nav=useNavigate()
@@ -20,7 +21,7 @@ export default function Login() {
   const loginSubmit=async(e)=>{
     e.preventDefault()
     seterror([])
-    const url=`http://localhost:8000/api/auth/login?email=${email}&Password=${password}`
+    const url=`${links.login}?email=${email}&Password=${password}`
     const response=await fetch(url)
     const result=await response.json()
     console.log(result)

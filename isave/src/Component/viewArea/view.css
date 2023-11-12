@@ -1,0 +1,52 @@
+#view{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(15, 59, 153, 0.466);
+    height: 100%;
+ 
+}
+.info{
+    padding: 2rem;
+    width: 100%;
+    flex: 1;
+}
+.info textarea{
+    resize: none;
+    border: 0;
+    background-color: rgba(88, 15, 43, 0.377);
+    color: var(--RedColor);
+    font-size: 1.5rem;
+    font-family: "Ubuntu";
+    padding: 1rem;
+    width: 100%;
+    height: 90%;
+    
+    letter-spacing: 0.1rem;
+}
+.special{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+ 
+    margin-bottom: 1rem;
+}
+.special button{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 2rem;
+    border: 0;
+    color: var(--GreenColor);
+    transition: 0.4s;
+    background-color: #000;
+    cursor: pointer;
+}
+.special button i{
+    scale: 1.5;
+}
+.special button:hover{
+    color: var(--RedColor);
+    background-color: #0000006b;
+}

@@ -1,0 +1,46 @@
+#Tile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 0.1rem solid #fff; */
+    width: 25rem;
+    background-color: rgba(32, 34, 35, 0.493);
+    min-height: 15rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+#Tile:hover >p{
+    scale: 1.1;
+    text-shadow: 0 0 1rem var(--RedColor);
+}
+#Tile>p{
+    margin: 2rem;
+    color: var(--RedColor);
+    font-family: "Titillium web";
+    font-size: 3.5rem;
+    text-align: center;
+    text-wrap: wrap;
+    transition: 0.4s;
+
+}
+#Tile>p::first-letter{
+    color: var(--GreenColor);
+}
+.date i{
+    color: var(--GreenColor);
+    margin-right: 0.5rem;
+}
+.date p{
+    font-size: 1.5rem;
+    /* border: 0.1rem solid #000; */
+    font-family: "Ubuntu";
+   
+    background-color: rgba(248, 32, 255, 0.468);
+   
+    color: rgb(255, 255, 255);
+    width: 100%;
+    text-align: center;
+    
+   
+}

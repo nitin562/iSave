@@ -3,6 +3,7 @@ import BIcon from "../BIcon/BIcon";
 import "./sign.css";
 import { useNavigate } from "react-router-dom";
 import InputB from "../InputBox/InputB";
+import links from "../Links";
 
 export default function Sign() {
   const nav = useNavigate();
@@ -36,7 +37,7 @@ export default function Sign() {
       body: JSON.stringify(data),
     };
     const response = await fetch(
-      "http://localhost:8000/api/auth/sign",
+      links.sign,
       options
     );
     const result = await response.json();

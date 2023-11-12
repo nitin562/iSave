@@ -18,3 +18,9 @@
 #BIcon:hover{
     filter: drop-shadow(0 0 1.5rem #ffffff8b) ;
 }
+
+@media screen and (min-width:950px) {
+    #BIcon{
+        display: none;
+    }
+}

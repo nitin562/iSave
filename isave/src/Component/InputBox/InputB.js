@@ -7,7 +7,7 @@ export default function InputB({type,name,change,state,write,width,err}) {
       {
         err.map((e,i)=>{
           if(e.errName===name){
-            return <p>{e.errMsg}</p>
+            return <p key={i}>{e.errMsg}</p>
           }
         })
       }
