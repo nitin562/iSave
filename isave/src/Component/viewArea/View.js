@@ -5,6 +5,7 @@ import { useCont } from '../Context/Context'
 import Title from '../TitleComp/Title'
 import InputB from '../InputBox/InputB'
 import links from '../Links'
+import Save from './Save/Save'
 export default function View() {
   const cont=useCont()
   const prev=useRef(0)
@@ -15,6 +16,9 @@ export default function View() {
   const [special, setspecial] = useState("")
   const [load, setload] = useState(false)
   const [error, seterror] = useState([])
+  const [textChange, settextChange] = useState(false)
+  const [showSave, setShowSave] = useState(false)
+
   const onSpecialChange=(e)=>{
     if(decode){
       return
@@ -33,6 +37,9 @@ export default function View() {
     })
   },[])
   const change=(e)=>{
+    if(!textChange){
+      settextChange(true)
+    }
     setNote(e.target.value)
   }
   const DecodeWithSpecial=async(e)=>{
@@ -56,7 +63,8 @@ export default function View() {
     if(result.success===1){
       setNote(result.note)
       setDecode(true)
-     
+      setspecial("")
+      settextChange(false)
     }
     else{
       seterror([{errName:"special",errMsg:result.msg}])
@@ -64,22 +72,28 @@ export default function View() {
     setload(false)
   }
   const onReverse=()=>{
-    
-    setNote(prev.current)
+    if(textChange){
+      setShowSave(true)
+    }
+    else{
+     setNote(prev.current)
+    }
     setDecode(false)
   }
+
+
   return (
     <div id="view" className='scrollbar'>
-      
       <Title title={title}/>
       <div className="info">
         <form className="special" onSubmit={DecodeWithSpecial}>
-          <InputB type="password" name="special" write="Enter Special String" change={onSpecialChange} state={special} err={error} width="90%"/>
+          <InputB type="password" name="special" write="Enter Special String" change={onSpecialChange} state={special} err={error} width="60%"/>
           <button onClick={onReverse} type="button" title="Reverse" disabled={!decode}><i className='fa-solid fa-backward'></i></button>
         </form>
         <textarea className='scrollbar' style={{filter:decode?"none":"blur(0.4rem)"}} disabled={!decode} onChange={change} type="text" value={note} />
       </div>
       {load&&<Load/>}
+      {showSave&&<Save note={note} textChange={settextChange} showSelf={setShowSave}/>}
       
     </div>
   )

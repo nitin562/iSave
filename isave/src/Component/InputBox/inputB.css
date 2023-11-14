@@ -8,7 +8,9 @@
 }
 .input{ 
     /* both for login.js and sign.js */
+    background-color: #262323df;
     width: 100%;
+    color: #fff;
     font-size: 1.3rem;
     text-wrap: wrap;
     font-family: QuickSand;
@@ -26,6 +28,7 @@
 .inputB p{
     /* border: 0.1rem solid #fff; */
     border-radius: 1rem;
+    margin-bottom: 1rem;
     width: 100%;
     padding: 0.5rem 1rem;
     color: beige;

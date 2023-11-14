@@ -1,6 +1,8 @@
 const express=require("express")
 const app=express()
 const connect=require('./ConnectDB')
+const fileUpload=require("express-fileupload")
+app.use(fileUpload())
 const cors=require("cors")
 app.use(cors())
 app.use(express.urlencoded({extended:false}))

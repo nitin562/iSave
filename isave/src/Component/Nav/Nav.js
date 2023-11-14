@@ -31,7 +31,7 @@ export default function Nav() {
         <span onClick={() => nav("data")}>
           <i className="fa-solid fa-database"></i>Your Data
         </span>
-        <span>
+        <span onClick={() => nav("addNew")}>
           <i className="fa-solid fa-plus"></i>Add Data
         </span>
         <span>

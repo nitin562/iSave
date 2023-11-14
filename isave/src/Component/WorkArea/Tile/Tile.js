@@ -5,7 +5,6 @@ export default function Tile({title,time,id}) {
     const createDate=(d)=>{
         let date=new Date(d)
         return date.toLocaleDateString()+" "+date.toLocaleTimeString()
-  
     }
     const nav=useNavigate()
     const GoToView=()=>{
@@ -14,7 +13,7 @@ export default function Tile({title,time,id}) {
     }
   return (
     <div id="Tile" onClick={GoToView}>
-        <p>{title}</p>
+        <p>{title.length>15?title.slice(0,16)+"...":title}</p>
         <div className="date">
             <p><i className="fa-solid fa-clock"></i>{createDate(time)}</p>
         </div>

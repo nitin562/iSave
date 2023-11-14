@@ -42,7 +42,7 @@ export default function Data() {
   return (
     <div id="Data" className="scrollbar">
       
-      <Title title="YOUR DATA" search={true} click={onClickingSearch} />
+      <Title title="YOUR DATA" clas="fa-solid fa-magnifying-glass" icon="search" click={onClickingSearch} />
       <form className="search" ref={search} onSubmit={onSubmitSearch}>
         <input
           type="search"

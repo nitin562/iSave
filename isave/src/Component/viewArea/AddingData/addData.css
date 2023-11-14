@@ -1,0 +1,57 @@
+#field{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(15, 59, 153, 0.466);
+    height: 100%;
+    row-gap: 1rem;
+}
+.Info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+    width: 100%;
+}
+#note{
+    resize: none;
+    border: 0;
+    outline: 0;
+    background-color: #25222275;
+    color: goldenrod;
+    font-size: 1.3rem;
+    font-family: "Ubuntu";
+    padding-top: 0.5rem;
+    padding: 2rem;
+    line-height: 2.5rem;
+    height: 25rem;
+    width: 90%;
+    letter-spacing: 0.1rem;
+    transition: 0.5s;
+}
+#pdf{
+    display: none;
+}
+.keybox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+.keybox button{
+    height: 3rem;
+    width: 3rem;
+    border: 0;
+    border-radius: 2rem;
+    background-color: rgba(255, 0, 157, 0.365);
+    color: #fff;
+    transition: 0.5s;
+}
+.keybox i{
+    scale: 1.5;
+
+}
+.keybox button:hover{
+    color: var(--GreenColor);
+}
