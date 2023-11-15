@@ -19,6 +19,7 @@ export default function AddData() {
     seterr([]);
     console.log(e.target.files, 1);
     setfile(e.target.files[0]);
+    e.target.value=""
     setselected(true);
   };
   const OnTitleChange = (e) => {
@@ -44,7 +45,7 @@ export default function AddData() {
       const result = await response.json();
 
       if (result.success === 1) {
-        setnote((prev) => prev + "\n" + result.text);
+        setnote((prev) => prev + result.text);
       } else {
         seterr((prev) => {
           return [
@@ -76,7 +77,7 @@ export default function AddData() {
     if (title === "" || key === "") {
       return;
     }
-    console.log("start");
+ 
     const url = links.addNote;
     const options = {
       method: "POST",
@@ -108,13 +109,13 @@ export default function AddData() {
     <div id="field" className="scrollbar">
       <Title
         title="New Entry"
-        icon="upload text using pdf"
+        icon="upload text using pdf or txt"
         clas="fa-solid fa-upload"
         click={() => fileRef.current.click()}
       />
       <input
         type="file"
-        accept=".pdf"
+        accept=".pdf,.txt"
         id="pdf"
         onChange={onFileSelect}
         ref={fileRef}

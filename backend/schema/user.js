@@ -18,6 +18,22 @@ const user=new db.Schema({
 
     }
 })
-
+const question=new db.Schema({
+    user:{
+        type:db.Types.ObjectId,
+        required:true
+    },
+    ques:{
+        type:String,
+        required:true
+    },
+    ans:{
+        type:String,
+        required:true,
+    }
+    
+},{timestamps:true})
 const userModel=db.model("user",user)
-module.exports=userModel
+const quesModel=db.model("userQues",question)
+
+module.exports={userModel,quesModel}

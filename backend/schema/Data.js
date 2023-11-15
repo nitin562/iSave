@@ -22,5 +22,6 @@ const data=new db.Schema({
     }
 })
 
+
 const dataModel=db.model("enData",data)
 module.exports=dataModel

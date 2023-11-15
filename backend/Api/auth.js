@@ -1,11 +1,8 @@
 const express=require('express')
-const userModel=require("../schema/user")
-const crypto=require("crypto")
+const {userModel}=require("../schema/user")
 const router=express.Router()
 const {validationResult,check} = require("express-validator")
 const { encrypt, decrypt, compress } = require('../MiddleWares/validation')
-
-
 // login endpoint
 router.get("/login",[check('email',"Email is invalid").isEmail(),check('Password',"Password must have atleast 6 characters").isLength({min:6})],async(req,res)=>{
     const {email,Password}=req.query

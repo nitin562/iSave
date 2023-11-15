@@ -1,8 +1,9 @@
 const express = require("express");
 const { decompress, encodeNote,compress, decodeNote } = require("../MiddleWares/validation");
 const dataModel = require("../schema/Data");
+
 const pdfParse=require("pdf-parse")
-const userModel = require("../schema/user");
+const {userModel} = require("../schema/user");
 const router = express.Router();
 //endpoints
 // get all notes as array- /notes
@@ -60,11 +61,15 @@ router.patch("/note",async(req,res)=>{
 
 })
 router.post("/extractText",(req,res)=>{
-  console.log(req.files)
-  if(!req.files && !req.files){
+ 
+  if(!req.files && !req.files.pdfFile){
     res.status(400).json({success:0,msg:"No file"})
   }
   const file=req.files.pdfFile;
+  if(file.mimetype==="text/plain"){
+    const text=file.data.toString()
+    return res.json({success:1,text:text.trim()})
+  }
   pdfParse(file).then((data)=>{
     res.json({success:1,text:data.text.trim()})
   },(err)=>{

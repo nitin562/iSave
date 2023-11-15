@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import "./view.css"
-import Load from "../Loading/Load"
 import { useCont } from '../Context/Context'
 import Title from '../TitleComp/Title'
 import InputB from '../InputBox/InputB'
