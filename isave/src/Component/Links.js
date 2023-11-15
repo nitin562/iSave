@@ -1,10 +1,11 @@
+const base="https://isave-backend-1.onrender.com/"
 const links={
-    login:"http://localhost:9000/api/auth/login",
-    sign:"http://localhost:9000/api/auth/sign",
-    addNote:"http://localhost:9000/api/data/note",
-    getNotes:"http://localhost:9000/api/data/notes",
-    Decode:"http://localhost:9000/api/data/DecodeNote",
-    updateNote:"http://localhost:9000/api/data/note",
-    extract:"http://localhost:9000/api/data/extractText"
+    login:`${base}api/auth/login`,
+    sign:`${base}api/auth/sign`,
+    addNote:`${base}api/data/note`,
+    getNotes:`${base}api/data/notes`,
+    Decode:`${base}api/data/DecodeNote`,
+    updateNote:`${base}api/data/note`,
+    extract:`${base}api/data/extractText`
 }
 export default links

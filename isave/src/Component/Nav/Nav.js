@@ -16,6 +16,10 @@ export default function Nav() {
     }
     settoggle((prev) => !prev);
   };
+  const onCLickNav=(path)=>{
+    nav(path)
+    onToggle() //only works when android is there as for pc, it is static
+  }
   const Logout = () => {
     localStorage.removeItem("name");
     localStorage.removeItem("token");
@@ -28,10 +32,10 @@ export default function Nav() {
         <p>{localStorage.getItem("name")}</p>
       </div>
       <div className="menu">
-        <span onClick={() => nav("data")}>
+        <span onClick={() => onCLickNav("data")}>
           <i className="fa-solid fa-database"></i>Your Data
         </span>
-        <span onClick={() => nav("addNew")}>
+        <span onClick={() => onCLickNav("addNew")}>
           <i className="fa-solid fa-plus"></i>Add Data
         </span>
         <span>

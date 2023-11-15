@@ -13,7 +13,7 @@ export default function Welcome() {
       startDelay:250
     });
     setTimeout(()=>{
-      nav("/dashboard")
+      nav("/dashboard/data")
     },[3000])
     return () => {
       // Destroy Typed instance during cleanup to stop animation

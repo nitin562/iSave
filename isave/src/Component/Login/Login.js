@@ -5,8 +5,11 @@ import AIcon from "../BIcon/AIcon";
 import { useNavigate } from "react-router-dom";
 import InputB from "../InputBox/InputB";
 import links from "../Links";
+import Loader from "../Loading/Loader";
+
 export default function Login() {
   const [error, seterror] = useState([])
+  const [load, setload] = useState(false)
   const nav=useNavigate()
   const [email, setemail] = useState("")
   const [password, setpassword] = useState("")
@@ -20,6 +23,7 @@ export default function Login() {
   }
   const loginSubmit=async(e)=>{
     e.preventDefault()
+    setload(true)
     seterror([])
     const url=`${links.login}?email=${email}&Password=${password}`
     const response=await fetch(url)
@@ -53,6 +57,7 @@ export default function Login() {
         return [...prev,{errName:"Password",errMsg:e.msg}]
       })
     }
+    setload(false)
 
   }
   return (
@@ -73,6 +78,8 @@ export default function Login() {
         <div className="buttons">
           <button type="submit">Login</button>
         </div>
+       {load&&<Loader/>}
+       {load&&<p id="Signal">Wait For While.. It may take some moment</p>}
       </form>
       
       <AIcon title="Sign in" clas="fa-solid fa-user-plus" path="/sign"/>

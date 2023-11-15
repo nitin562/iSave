@@ -6,7 +6,7 @@ import Tile from "./Tile/Tile.js";
 import { useCont } from "../Context/Context.js";
 import Load from "../Loading/Load.js";
 export default function Data() {
-  const search = useRef(0);
+  const search = useRef(null);
   const [load, setload] = useState(false)
   const [notes, setnotes] = useState([]);
   const [showSearch, setshowSearch] = useState(false);
@@ -26,6 +26,7 @@ export default function Data() {
     }
   };
   const onClickingSearch = () => {
+    
     if (showSearch) {
       search.current.style.height = "0rem";
     } else {
@@ -42,15 +43,8 @@ export default function Data() {
   return (
     <div id="Data" className="scrollbar">
       
-      <Title title="YOUR DATA" clas="fa-solid fa-magnifying-glass" icon="search" click={onClickingSearch} />
-      <form className="search" ref={search} onSubmit={onSubmitSearch}>
-        <input
-          type="search"
-          id="search"
-          name="search"
-          placeholder="Enter Title"
-        />
-      </form>
+      <Title title="YOUR DATA"/>
+      
       {load&&<Load/>}
       {!load&&<div className="notes">
         {notes.map((e) => {

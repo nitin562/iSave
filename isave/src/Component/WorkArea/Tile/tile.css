@@ -27,11 +27,13 @@
 #Tile>p::first-letter{
     color: var(--GreenColor);
 }
+
 .date i{
     color: var(--GreenColor);
     margin-right: 0.5rem;
 }
 .date p{
+    padding: 0.5rem;
     font-size: 1.5rem;
     /* border: 0.1rem solid #000; */
     font-family: "Ubuntu";

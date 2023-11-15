@@ -17,6 +17,18 @@
     z-index: -1;
 }
 
+/* for all pages to show some instructions */
+#Signal{
+    margin: 1rem 1rem;
+  
+    text-align: center;
+    text-shadow: 0 0 1rem yellow;
+    font-size: 1.3rem;
+    font-family: "Arial Narrow";
+    letter-spacing: 0.1rem;
+    color: yellow;
+    text-wrap: wrap;
+}
 @media screen and (min-width:950px) {
     #dash{
         flex-direction: row;

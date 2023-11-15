@@ -6,6 +6,7 @@ import Title from '../TitleComp/Title'
 import InputB from '../InputBox/InputB'
 import links from '../Links'
 import Save from './Save/Save'
+import Loader from '../Loading/Loader'
 export default function View() {
   const cont=useCont()
   const prev=useRef(0)
@@ -85,14 +86,17 @@ export default function View() {
   return (
     <div id="view" className='scrollbar'>
       <Title title={title}/>
+      {load&&<Loader/>}
+
       <div className="info">
         <form className="special" onSubmit={DecodeWithSpecial}>
           <InputB type="password" name="special" write="Enter Special String" change={onSpecialChange} state={special} err={error} width="60%"/>
+          
           <button onClick={onReverse} type="button" title="Reverse" disabled={!decode}><i className='fa-solid fa-backward'></i></button>
         </form>
         <textarea className='scrollbar' style={{filter:decode?"none":"blur(0.4rem)"}} disabled={!decode} onChange={change} type="text" value={note} />
       </div>
-      {load&&<Load/>}
+   
       {showSave&&<Save note={note} textChange={settextChange} showSelf={setShowSave}/>}
       
     </div>

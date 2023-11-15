@@ -4,8 +4,10 @@ import "./sign.css";
 import { useNavigate } from "react-router-dom";
 import InputB from "../InputBox/InputB";
 import links from "../Links";
+import Loader from "../Loading/Loader";
 
 export default function Sign() {
+  const [Load, setLoad] = useState(false)
   const nav = useNavigate();
   const [error, seterror] = useState([]);
   const [Name, setName] = useState("");
@@ -23,6 +25,7 @@ export default function Sign() {
 
   const onSign = async (e) => {
     e.preventDefault();
+    setLoad(true)
     seterror([])
     const data = {
       name: Name,
@@ -61,7 +64,9 @@ export default function Sign() {
       seterror((prev) => {
         return [...prev, { errName: "email",errMsg:"Email is already used" }];
       });
-    } 
+      
+    }
+    setLoad(false) 
   };
   return (
     <div id="sign" className="scrollbar">
@@ -98,6 +103,9 @@ export default function Sign() {
         <div className="buttons">
           <button type="submit">Register</button>
         </div>
+        {Load&&<Loader/>}
+       {Load&&<p id="Signal">Wait For While.. It may take some moment</p>}
+
       </form>
       <AIcon title="Log in" clas="fa-solid fa-user" path="/" />
     </div>
