@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./login.css";
 
-import BIcon from "../BIcon/BIcon";
+import AIcon from "../BIcon/AIcon";
 import { useNavigate } from "react-router-dom";
 import InputB from "../InputBox/InputB";
 import links from "../Links";
@@ -75,7 +75,7 @@ export default function Login() {
         </div>
       </form>
       
-      <BIcon title="Sign in" clas="fa-solid fa-user-plus" path="/sign"/>
+      <AIcon title="Sign in" clas="fa-solid fa-user-plus" path="/sign"/>
     </div>
   );
 }

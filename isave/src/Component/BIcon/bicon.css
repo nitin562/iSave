@@ -1,4 +1,4 @@
-#BIcon{
+#BIcon,#AIcon{
     position: fixed;
     bottom: 0;
     right: 0;
@@ -16,7 +16,8 @@
     cursor: pointer;
     z-index: 2;
 }
-#BIcon:hover{
+
+#BIcon:hover,#AIcon:hover{
     filter: drop-shadow(0 0 1.5rem #ffffff8b) ;
 }
 
