@@ -16,6 +16,7 @@ export default function Save({note,showSelf,textChange}) {
             "Content-Type":"application/json"
           },
           body:JSON.stringify({
+            token:localStorage.getItem("token"),
             noteId:localStorage.getItem("selected"),
             note,
             special:key

@@ -9,6 +9,7 @@ export default function Tile({title,time,id}) {
     const nav=useNavigate()
     const GoToView=()=>{
       localStorage.setItem("selected",id)
+      localStorage.setItem("selectedTitle",title)
       nav(`/dashboard/view/${id}`)
     }
   return (

@@ -6,7 +6,9 @@
 
   @import url('https://fonts.googleapis.com/css2?family=AR+One+Sans&family=Abel&family=Amaranth&family=Anton&family=Arsenal&family=Barlow:wght@300&family=Bruno+Ace+SC&family=Comfortaa&family=Comforter&family=Jost:wght@100;400&family=Maven+Pro&family=Oxygen&family=PT+Sans+Narrow&family=Palanquin:wght@300&family=Philosopher&family=Quicksand:wght@300;400&family=Satisfy&family=Shadows+Into+Light&family=Thasadith:wght@700&family=Tilt+Prism&family=Titillium+Web:wght@200&family=Ubuntu+Mono&family=Ubuntu:wght@300&family=Viga&family=Zeyada&display=swap');
 
-
+  button[type="submit"]:disabled{
+    filter: brightness(0.5);
+}
   :root{
     --RedColor:#ff1372;
     --GreenColor:#12f692;

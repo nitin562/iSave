@@ -22,7 +22,7 @@
     margin: 1rem 1rem;
   
     text-align: center;
-    text-shadow: 0 0 1rem yellow;
+    text-shadow: 0 0 1rem currentColor;
     font-size: 1.3rem;
     font-family: "Arial Narrow";
     letter-spacing: 0.1rem;

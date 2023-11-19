@@ -8,6 +8,7 @@
 }
 .input{ 
     /* both for login.js and sign.js */
+    border: 0.01rem solid #ffffff61;
     background-color: #262323df;
     width: 100%;
     color: #fff;
@@ -18,7 +19,7 @@
     margin: 0.5rem 0;
     border-radius: 1rem;
     outline: 0;
-    border: 0;
+    /* border: 0; */
     cursor: pointer;
     padding: 0.5rem;
 }

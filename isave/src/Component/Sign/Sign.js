@@ -48,7 +48,7 @@ export default function Sign() {
       // ok
       localStorage.setItem("name", result.name);
       localStorage.setItem("token", result.token);
-      nav("/welcome");
+      nav("/qa"); //for Ques and ans
     } else if (result.success === 0) {
       //error as array
       console.log(1, result);

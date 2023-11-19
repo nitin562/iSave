@@ -42,16 +42,28 @@ const decodeNote=(req,res,next)=>{
         }
     })
 }
-
+const SpecificDecompress=(token)=>{
+    const payload=jwt.decode(token)
+    if(payload.id){
+        return payload.id
+    }
+    else{
+        return payload.note
+    }
+}
 const decompress=(req,res,next)=>{ //middleware that put id of user to the req
     let token=req.query["token"]
     if(!token){
         token=req.body.token
     }
+    if(!token){
+        res.status(400).json({success:0,msg:"No Login"})
+    }
+   
     const payload=jwt.decode(token)
     req.user=payload.id
     next()
 }
 
 
-module.exports={encrypt,decrypt,compress,decompress,encodeNote,decodeNote}
+module.exports={SpecificDecompress,encrypt,decrypt,compress,decompress,encodeNote,decodeNote}

@@ -26,3 +26,16 @@
 #titleBox i:hover{
     color: cyan;
 }
+
+#titleBox span{
+    font-size: 1.4rem;
+    margin-right: 1rem;
+    color: yellow;
+    cursor: pointer;
+    font-family: "Titillium web";
+    transition: 0.4s;
+}
+#titleBox span:hover{
+    color: var(--RedColor);
+    text-shadow: 0 0 1rem yellow;
+}

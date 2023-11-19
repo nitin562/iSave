@@ -38,9 +38,9 @@ export default function Nav() {
         <span onClick={() => onCLickNav("addNew")}>
           <i className="fa-solid fa-plus"></i>Add Data
         </span>
-        <span>
+        {/* <span onClick={()=> onCLickNav("uploadFile")}>
           <i className="fa-solid fa-upload"></i>upload PDF
-        </span>
+        </span> */}
       </div>
       <div className="logout">
         <button onClick={Logout}>

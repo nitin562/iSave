@@ -6,9 +6,11 @@ import InputB from '../InputBox/InputB'
 import links from '../Links'
 import Save from './Save/Save'
 import Loader from '../Loading/Loader'
+import { useNavigate } from 'react-router-dom'
 export default function View() {
   const cont=useCont()
   const prev=useRef(0)
+  const nav=useNavigate()
   const id=localStorage.getItem("selected")
   const [title, settitle] = useState("")
   const [note, setNote] = useState("")
@@ -48,6 +50,7 @@ export default function View() {
     const url=links.Decode;
     seterror([])
     const body={
+      token:localStorage.getItem("token"),
       eNote:note,
       special
     }
@@ -80,11 +83,13 @@ export default function View() {
     }
     setDecode(false)
   }
-
+  const navToResetPage=()=>{
+    nav("/dashboard/view/Reset")
+  }
 
   return (
     <div id="view" className='scrollbar'>
-      <Title title={title}/>
+      <Title title={title} text="Reset key" click={navToResetPage}/>
       {load&&<Loader/>}
 
       <div className="info">

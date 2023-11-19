@@ -10,6 +10,8 @@ app.use(express.json())
 
 app.use("/api/auth",require('./Api/auth.js'))
 app.use("/api/data",require('./Api/dataApi.js'))
+app.use("/api/security",require('./Api/quesApi.js'))
+
 
 connect()
 app.get("/",(req,res)=>{
