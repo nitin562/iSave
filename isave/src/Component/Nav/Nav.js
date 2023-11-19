@@ -1,10 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./nav.css";
+import Typed from "typed.js"
 import BIcon from "../BIcon/BIcon";
 import { useNavigate } from "react-router-dom";
 export default function Nav() {
   const [toggle, settoggle] = useState(false);
- 
+  const span=useRef()
   const wrap2 = useRef(0);
 
   const nav = useNavigate();
@@ -25,8 +26,24 @@ export default function Nav() {
     localStorage.removeItem("token");
     nav("/");
   };
+  useEffect(()=>{
+    const type=new Typed(span.current,{
+      strings:["ISAVE","Secure","Two layer Security"],
+      typeSpeed: 200,
+      showCursor:false,
+      startDelay:250,
+      loop:true
+    })
+    return()=>{
+      type.destroy()
+    }
+  })
   return (
     <div className="wrap-2" ref={wrap2}>
+      <div className="type">
+        <span id="typing" ref={span}></span>
+        
+      </div>
       <div className="user_info">
         <img id="user_nav" src={require("../Images/navUser.png")} alt="user" />
         <p>{localStorage.getItem("name")}</p>

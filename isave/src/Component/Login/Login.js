@@ -79,7 +79,7 @@ export default function Login() {
           <button type="submit">Login</button>
         </div>
        {load&&<Loader/>}
-       {load&&<p id="Signal">Wait For While.. It may take some moment</p>}
+       {load&&<p id="Signal">Wait For a While.. It may take some moments</p>}
       </form>
       
       <AIcon title="Sign in" clas="fa-solid fa-user-plus" path="/sign"/>
