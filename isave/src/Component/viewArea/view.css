@@ -54,6 +54,7 @@
     transition: 0.4s;
     background-color: #000;
     cursor: pointer;
+    margin: 0 0.5rem;
 }
 .special button i{
     scale: 1.5;

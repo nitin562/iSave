@@ -1,6 +1,6 @@
 #titleBox{
     width: 100%;
-    height: 4rem;
+    min-height: 4rem;
     /* border: 0.1rem solid #fff; */
   
     display: flex;
@@ -9,8 +9,11 @@
     background-color: rgb(15, 18, 37);
 }
 #titleBox p{
-    text-indent: 1rem;
+    width: 70%;
+    /* border: 0.1rem solid #fff; */
+    padding: 0 1rem;
     font-size: 2rem;
+    text-wrap: wrap;
     font-family: "Thasadith";
     color: var(--GreenColor);
 }

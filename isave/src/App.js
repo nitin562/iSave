@@ -4,6 +4,7 @@ import Home from "./Component/Home/Home";
 import { CProvider } from "./Component/Context/Context";
 
 function App() {
+  
   return (
     <CProvider>
       <BrowserRouter>

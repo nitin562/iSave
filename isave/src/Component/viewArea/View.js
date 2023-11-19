@@ -36,9 +36,15 @@ export default function View() {
       if (e._id === id) {
         settitle(e.title);
         setNote(e.encodedData);
+        localStorage.setItem("eData",e.encodedData)
         prev.current = e.encodedData;
       }
     });
+  
+    if(cont.state.notes.length===0){
+      settitle(localStorage.getItem("selectedTitle"))
+      setNote(localStorage.getItem("eData"))
+    }
   }, []);
   const change = (e) => {
     if (!textChange) {
@@ -129,6 +135,7 @@ export default function View() {
       extract()
     }
   },[selected])
+  
   return (
     <div id="view" className="scrollbar">
       <Title title={title} text="Reset key" click={navToResetPage} />
@@ -143,7 +150,7 @@ export default function View() {
             change={onSpecialChange}
             state={special}
             err={error}
-            width="60%"
+            width="80%"
           />
           <div className="btn">
             <button type="button" disabled={decode===false} title="upload" onClick={()=>fileTaker.current.click()}>

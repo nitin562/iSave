@@ -1,12 +1,13 @@
-import React from 'react'
-import {Route,Routes} from "react-router-dom"
+import React,{useEffect} from 'react'
+import {Route,Routes,useNavigate} from "react-router-dom"
 import Login from '../Login/Login'
 import Sign from '../Sign/Sign'
 import Welcome from '../Welcome/Welcome'
 import Dash from '../dashboard/Dash'
-import View from '../viewArea/View'
+// import View from '../viewArea/View'
 import QA from '../QA/QA'
 export default function Home() {
+  
   return (
     <div id='Home' className='scrollbar'>
         <Routes>
