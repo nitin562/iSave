@@ -28,7 +28,6 @@ export default function () {
       return
     }
     const url=`${links.A}?token=${localStorage.getItem("token")}&ANS=${ans}`
-    alert(url)
     const response=await fetch(url)
     const result=await response.json()
     if(result.success===1){
