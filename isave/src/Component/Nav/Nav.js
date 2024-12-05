@@ -28,7 +28,7 @@ export default function Nav() {
   };
   useEffect(()=>{
     const type=new Typed(span.current,{
-      strings:["ISAVE","Secure","Two layer Security"],
+      strings:["DigiStore","Secure","Two layer Security"],
       typeSpeed: 200,
       showCursor:false,
       startDelay:250,
